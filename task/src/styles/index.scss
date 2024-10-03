@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+@mixin flex($align, $justify, $gap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+nav {
+  @include flex(center, space-between, 2rem);
+  padding-top: 1.5rem;
+  padding-inline: 4rem;
+  padding-bottom: 1rem;
+  ul {
+    @include flex(center, center, 2rem);
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .btn {
+    button {
+      width: 7rem;
+      height: 3rem;
+      text-align: center;
+      padding-block: 1rem;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      background-color: black;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+section {
+  @include flex(center, center, 0rem);
+  width: 100vw;
+  height: 90vh;
+  text-align: center;
+  background-color: rgba($color: #f1f1f1, $alpha: 1);
+}
+a.active{
+    background-color: aqua;
+    
+
+}
+.menu_links {
+  width: 10rem;
+  height: fit-content;
+  padding-block: 2rem;
+  background-color: white;
+  border: 1px solid black;
+  ul {
+    @include flex(center, center, 1rem);
+    flex-direction: column;
+
+    li {
+      list-style: none;
+      width: 100%;
+      padding-bottom: 1rem;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.output_field{
+    width: 70vh;
+    margin-left:2rem ;
+    background-color: white;
+    padding-block: 1rem;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+.contact_page{
+    flex-direction: row;
+    @include flex(center,flex-start ,2rem );
+    padding-inline-start: 8rem;
+}
